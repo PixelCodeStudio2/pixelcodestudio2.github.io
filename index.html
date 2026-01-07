@@ -4,127 +4,199 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>TubeMax Ultra - Best Free YouTube Video & MP3 Downloader</title>
-    <meta name="description" content="Download YouTube videos in 4K, 1080p, and MP3 instantly with TubeMax Ultra. The safest online downloader for mobile and PC. No software needed.">
-    <meta name="keywords" content="YouTube Downloader, YT to MP3, Video Saver, 4K Downloader, YouTube Shorts Download, Free Video Converter, TubeMax">
-    <meta name="robots" content="index, follow">
-
+    <meta name="google-site-verification" content="google6c244bf7006c2200" />
+    
+    <title>TubeMax Ultra - Premium YouTube Downloader & MP3 Converter</title>
+    <meta name="description" content="Download YouTube videos in 4K, 1080p, and MP3 instantly with TubeMax Ultra. Multi-server technology works on all networks. Free and Fast.">
+    
     <link rel="icon" href="favicon.png" type="image/png">
 
     <style>
-        /* === CORE DESIGN === */
+        /* === CORE BRANDING (NO CHANGES) === */
         :root {
             --primary: #ff0000;
-            --dark: #111;
-            --bg: #f8f9fa;
-            --glass: rgba(255, 255, 255, 0.9);
+            --dark: #0f0f0f;
+            --light: #ffffff;
+            --bg: #f4f6f8;
+            --shadow: 0 20px 60px rgba(0,0,0,0.1);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
 
-        body { background-color: var(--bg); color: #333; line-height: 1.6; }
+        body { 
+            background-color: var(--bg); 
+            color: #333; 
+            display: flex; 
+            flex-direction: column; 
+            min-height: 100vh; 
+        }
 
         /* === HEADER === */
         nav {
-            background: white;
+            background: var(--light);
             padding: 15px 5%;
             text-align: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            position: relative; z-index: 10;
         }
-        .site-name { font-size: 24px; font-weight: 900; color: var(--dark); text-decoration: none; letter-spacing: -1px; }
+        .site-name { font-size: 28px; font-weight: 900; color: var(--dark); text-decoration: none; letter-spacing: -1px; }
         .site-name span { color: var(--primary); }
 
-        /* === HERO SECTION === */
         .hero {
-            background: linear-gradient(135deg, #ff4b4b 0%, #cc0000 100%);
-            padding: 50px 20px 100px;
+            background: linear-gradient(135deg, #e60000 0%, #b30000 100%);
+            padding: 100px 20px 180px;
             text-align: center;
             color: white;
-            border-bottom-left-radius: 40px;
-            border-bottom-right-radius: 40px;
         }
-        .hero h1 { font-size: 2.2rem; font-weight: 800; margin-bottom: 10px; }
-        
-        /* === MAIN TOOL (Glass Effect) === */
+        .hero h1 { font-size: 2.8rem; font-weight: 800; margin-bottom: 15px; text-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+        .hero p { font-size: 1.3rem; opacity: 0.95; }
+
+        /* === MAIN WIDE CARD === */
         .tool-box {
-            max-width: 800px;
-            margin: -70px auto 40px;
-            background: var(--glass);
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.6);
+            max-width: 1000px;
+            margin: -120px auto 50px;
+            background: var(--light);
+            padding: 50px 40px;
+            border-radius: 25px;
+            box-shadow: var(--shadow);
             position: relative;
+            z-index: 5;
         }
 
-        /* Tabs */
-        .tabs { display: flex; justify-content: center; gap: 10px; margin-bottom: 20px; }
-        .tab-btn {
-            padding: 8px 20px; border: none; background: #eee; border-radius: 20px;
-            cursor: pointer; font-weight: 600; color: #555; transition: 0.3s;
-        }
-        .tab-btn.active { background: var(--primary); color: white; box-shadow: 0 4px 10px rgba(255,0,0,0.3); }
-
-        /* Input */
-        .input-group { display: flex; gap: 10px; flex-wrap: wrap; }
-        input[type="text"] {
-            flex: 1; padding: 15px; border: 2px solid #ddd; border-radius: 10px; font-size: 16px; outline: none;
-        }
-        input[type="text"]:focus { border-color: var(--primary); }
-        
-        .dl-btn {
-            padding: 15px 30px; background: var(--dark); color: white; border: none;
-            border-radius: 10px; font-weight: bold; cursor: pointer; transition: 0.2s;
-        }
-        .dl-btn:hover { background: #000; transform: scale(1.02); }
-
-        /* Result Frames */
-        iframe#resultFrame { width: 100%; min-height: 100px; border: none; margin-top: 20px; display: none; }
-        #thumbResult { display: none; text-align: center; margin-top: 20px; }
-        #thumbResult img { max-width: 100%; border-radius: 10px; margin-bottom: 10px; }
-
-        /* === ADS AREA (Clean) === */
+        /* === ADS (HIDDEN CONTAINER) === */
         .ad-slot {
             width: 100%; 
-            display: flex; align-items: center; justify-content: center;
-            margin: 20px 0;
-            overflow: hidden; /* Bada ad mobile me bahar nahi niklega */
+            display: flex; justify-content: center; align-items: center;
+            margin-bottom: 20px;
+            background: transparent;
+            border: none;
+            min-height: 0;
         }
 
-        /* === SEO ARTICLE === */
-        .article-container {
-            max-width: 900px;
-            margin: 0 auto 50px;
-            padding: 20px;
-            background: white;
-            border-radius: 15px;
+        /* TABS */
+        .tabs { display: flex; justify-content: center; gap: 20px; margin-bottom: 30px; }
+        .tab-btn {
+            padding: 15px 40px; border: none; background: #f0f0f0; border-radius: 50px;
+            cursor: pointer; font-weight: 700; color: #555; transition: 0.3s; font-size: 16px;
+        }
+        .tab-btn.active { background: var(--primary); color: white; box-shadow: 0 8px 20px rgba(255,0,0,0.3); transform: scale(1.05); }
+
+        /* SERVER OPTIONS */
+        .server-container { text-align: center; margin-bottom: 25px; }
+        .server-options {
+            display: inline-flex; justify-content: center; gap: 10px;
+            flex-wrap: wrap; background: #f8f8f8; padding: 10px 20px; border-radius: 50px; 
+        }
+        .srv-label { font-size: 14px; font-weight: bold; color: #666; align-self: center; margin-right: 5px; }
+        .srv-btn {
+            background: white; border: 1px solid #ddd; padding: 8px 20px; border-radius: 25px;
+            font-size: 14px; cursor: pointer; color: #555; font-weight: 600; transition: 0.2s;
+        }
+        .srv-btn:hover { background: #eee; }
+        .srv-btn.active { background: var(--dark); color: white; border-color: var(--dark); }
+
+        /* === GIANT INPUT AREA === */
+        .input-group { display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 30px; }
+        input[type="text"] {
+            flex: 1; 
+            padding: 25px 30px; 
+            border: 2px solid #e0e0e0; 
+            border-radius: 15px; 
+            font-size: 1.2rem; 
+            outline: none;
+            transition: 0.3s; 
+            background: #fff;
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.02);
+        }
+        input[type="text"]:focus { border-color: var(--primary); box-shadow: 0 0 0 5px rgba(255,0,0,0.1); }
+        
+        .dl-btn {
+            padding: 20px 60px;
+            background: var(--dark); color: white; border: none;
+            border-radius: 15px; font-weight: 800; font-size: 1.2rem; cursor: pointer; transition: 0.2s;
+        }
+        .dl-btn:hover { background: black; transform: translateY(-3px); box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
+
+        /* INFO BOX */
+        #thumbResult { 
+            display: none; 
+            margin-top: 40px; 
+            padding: 30px; 
+            background: #fff; 
+            border: 1px solid #eee;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        .info-layout {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            text-align: left;
+        }
+        .info-layout img { 
+            width: 200px; 
+            height: auto; 
+            border-radius: 15px; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        }
+        .info-details { flex: 1; }
+        .info-details h4 {
+            margin: 0 0 15px; font-size: 22px; color: var(--dark); line-height: 1.4;
+            display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+        }
+        .info-details p { margin: 0; font-size: 16px; color: #777; font-weight: 600; margin-bottom: 15px;}
+        .thumb-dl-link {
+            display: inline-block; font-size: 15px; color: var(--primary);
+            text-decoration: none; font-weight: bold; border-bottom: 2px solid var(--primary); padding-bottom: 2px;
+        }
+
+        /* === ARTICLE & FOOTER (RESTORED) === */
+        .article-container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; flex: 1; }
+        .article-content h2 { 
+            color: var(--dark); margin-top: 60px; font-size: 2.2rem; 
+            border-left: 8px solid var(--primary); padding-left: 25px; 
+            background: white; padding: 20px 30px; border-radius: 0 15px 15px 0;
             box-shadow: 0 2px 10px rgba(0,0,0,0.03);
         }
+        .article-content h3 { color: #444; margin-top: 40px; font-size: 1.6rem; font-weight: 700; }
+        .article-content p { margin-bottom: 20px; text-align: justify; color: #555; font-size: 1.15rem; line-height: 1.8; }
+        .article-content ul { margin: 30px; padding-left: 20px; color: #555; font-size: 1.15rem; }
+        .article-content li { margin-bottom: 15px; }
+
+        .faq-box { 
+            background: white; padding: 30px; border-radius: 15px; 
+            box-shadow: 0 5px 20px rgba(0,0,0,0.04); margin-bottom: 25px; 
+            border: 1px solid #eee;
+        }
+        .faq-question { font-weight: 800; color: var(--primary); margin-bottom: 10px; font-size: 1.3rem; }
         
-        .article-content h2 { color: var(--primary); margin-top: 30px; font-size: 1.8rem; }
-        .article-content p { margin-bottom: 15px; text-align: justify; color: #555; font-size: 1.1rem; }
-        .article-content ul { margin: 20px; color: #444; }
-        .article-content li { margin-bottom: 10px; }
+        footer { background: var(--dark); color: #999; text-align: center; padding: 70px 20px; margin-top: 80px; }
+        footer p { font-size: 16px; margin-bottom: 20px; }
+        footer a { color: #eee; text-decoration: none; margin: 0 15px; font-weight: 600; font-size: 15px; }
 
-        /* === FOOTER === */
-        footer { background: #1a1a1a; color: #aaa; text-align: center; padding: 40px 20px; }
-        footer a { color: #fff; text-decoration: none; margin: 0 10px; }
-
-        /* Mobile Adjustments */
+        /* === RESPONSIVE MAGIC === */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 1.8rem; }
-            .tool-box { margin-top: -50px; padding: 20px; }
-            .input-group { flex-direction: column; }
-            .dl-btn { width: 100%; }
+            .hero { padding: 80px 20px 100px; }
+            .hero h1 { font-size: 2rem; }
+            .tool-box { 
+                margin-top: -60px; padding: 25px 20px; width: 92%; 
+                margin-left: auto; margin-right: auto;
+            }
+            .tabs { gap: 10px; }
+            .tab-btn { padding: 10px 20px; font-size: 14px; } 
+            .input-group { flex-direction: column; } 
+            input[type="text"] { font-size: 1rem; padding: 20px; }
+            .dl-btn { width: 100%; padding: 20px; font-size: 1.1rem; }
+            .info-layout { flex-direction: column; text-align: center; }
+            .info-layout img { width: 100%; max-width: 300px; }
+            .server-options { flex-direction: row; width: 100%; justify-content: space-evenly; }
         }
-
-        @media (min-width: 1024px) {
-            .hero { padding: 80px 20px 140px; }
-            .tool-box { padding: 50px; margin-top: -100px; }
-            .article-container { padding: 60px; }
+        @media (min-width: 1600px) {
+            .tool-box { max-width: 1200px; padding: 60px 50px; }
+            .hero h1 { font-size: 3.5rem; }
+            input[type="text"] { font-size: 1.4rem; }
+            .dl-btn { font-size: 1.4rem; padding: 25px 70px; }
         }
-
     </style>
 </head>
 <body>
@@ -142,13 +214,7 @@
         
         <div class="ad-slot">
             <script>
-                atOptions = {
-                    'key' : '69db9fb055bbb18c62e0fa2db41f04c8',
-                    'format' : 'iframe',
-                    'height' : 90,
-                    'width' : 728,
-                    'params' : {}
-                };
+                atOptions = { 'key' : '69db9fb055bbb18c62e0fa2db41f04c8', 'format' : 'iframe', 'height' : 90, 'width' : 728, 'params' : {} };
             </script>
             <script src="https://www.highperformanceformat.com/69db9fb055bbb18c62e0fa2db41f04c8/invoke.js"></script>
         </div>
@@ -159,17 +225,29 @@
             <button class="tab-btn" onclick="setMode('thumb')">Thumbnail</button>
         </div>
 
+        <div class="server-container" id="serverContainer">
+            <div class="server-options">
+                <span class="srv-label">Server:</span>
+                <button class="srv-btn active" onclick="setServer(1)">Default</button>
+                <button class="srv-btn" onclick="setServer(2)">Backup 1</button>
+                <button class="srv-btn" onclick="setServer(3)">Backup 2</button>
+            </div>
+        </div>
+
         <div class="input-group">
-            <input type="text" id="urlInput" placeholder="Paste YouTube Link here...">
+            <input type="text" id="urlInput" placeholder="Paste YouTube / Shorts Link here...">
             <button class="dl-btn" onclick="startDownload()">Download</button>
         </div>
 
-        <iframe id="resultFrame" scrolling="no"></iframe>
-        
         <div id="thumbResult">
-            <img id="thumbImg" src="">
-            <br>
-            <a id="thumbLink" href="#" class="dl-btn" style="text-decoration:none; display:inline-block; margin-top:10px;">Save Image</a>
+            <div class="info-layout">
+                <img id="thumbImg" src="">
+                <div class="info-details">
+                    <h4 id="videoTitle">Fetching Title...</h4>
+                    <p id="channelName">Channel Name</p>
+                    <a id="thumbLink" href="#" class="thumb-dl-link">Download Thumbnail Only</a>
+                </div>
+            </div>
         </div>
 
         <div class="ad-slot">
@@ -182,78 +260,142 @@
     <div class="article-container">
         <div class="article-content">
             <h2>Ultimate YouTube Video Downloader 2026</h2>
-            <p>Welcome to <strong>TubeMax Ultra</strong>, the internet's most reliable and fast tool for downloading content from YouTube. Whether you need to save a video for offline viewing, extract background music as MP3, or grab a high-quality thumbnail, we have you covered. Our service is completely free, secure, and user-friendly.</p>
-
-            <h3>How Does It Work?</h3>
-            <p>Our intelligent system connects directly to high-speed servers to process your request instantly. Unlike other tools that require software installation, TubeMax Ultra works directly in your browser (Chrome, Safari, Firefox) on any device.</p>
+            <p>Welcome to <strong>TubeMax Ultra</strong>, the world's most advanced tool. We have updated our system to fully support <strong>YouTube Shorts</strong> and high-quality <strong>MP3 Music</strong>. TubeMax Ultra features state-of-the-art "Multi-Server Technology" to ensure your downloads never fail.</p>
             
+            <p>Whether you need to save an educational video, a funny Short, or extract music, TubeMax Ultra is your one-stop solution. Our service is 100% free and secure.</p>
+
+            <h3>Key Features</h3>
             <ul>
-                <li><strong>Universal Support:</strong> Works on Android, iOS (iPhone), Windows, and Mac.</li>
-                <li><strong>No Limits:</strong> Download as many videos as you want. unlimited and free.</li>
-                <li><strong>Original Quality:</strong> We support 4K, 2K, 1080p Full HD, and standard SD qualities.</li>
+                <li><strong>Shorts Support:</strong> Now download YouTube Shorts instantly!</li>
+                <li><strong>MP3 Converter:</strong> Extract high-quality audio (320kbps).</li>
+                <li><strong>Anti-Block Technology:</strong> Use "Backup Servers" if the default fails.</li>
+                <li><strong>High Speed:</strong> Optimized for all devices.</li>
             </ul>
 
-            <h2>YouTube to MP3 Converter</h2>
-            <p>Looking for music? Our "Music Mode" automatically extracts the audio track from the video and converts it into a high-quality MP3 file (320kbps). This is perfect for building your offline music library without needing premium subscriptions.</p>
+            <h2>How to Download?</h2>
+            <ol style="margin-left:25px; margin-bottom:20px; color:#555; font-size:1.15rem; line-height:1.8;">
+                <li>Copy the link of the Video or Short.</li>
+                <li>Paste it in the box above.</li>
+                <li>Wait for the Title & Thumbnail.</li>
+                <li>Click <strong>Download</strong>.</li>
+            </ol>
 
-            <h2>Is it Safe to Use?</h2>
-            <p>Yes, absolutely. TubeMax Ultra does not store any of your personal data or the videos you download. The process is anonymous and secure. We do not require any signup or login, ensuring your privacy is maintained at all times.</p>
+            <h2>YouTube to MP3 Converter</h2>
+            <p>TubeMax Ultra isn't just for videos. Our dedicated Music Mode allows you to convert any YouTube video into a crystal-clear MP3 file. Perfect for building your offline playlist.</p>
+
+            <h2>FAQ</h2>
+            <div class="faq-box">
+                <div class="faq-question">Q: Can I download Shorts?</div>
+                <p>A: Yes! TubeMax Ultra now fully supports YouTube Shorts links.</p>
+            </div>
+            <div class="faq-box">
+                <div class="faq-question">Q: Is it free?</div>
+                <p>A: Yes! TubeMax Ultra is 100% free to use.</p>
+            </div>
+             <div class="faq-box">
+                <div class="faq-question">Q: Why use Backup Servers?</div>
+                <p>A: Sometimes networks block the main server. Our Backup servers ensure you can always download.</p>
+            </div>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2026 TubeMax Ultra.</p>
+        <p>&copy; 2026 TubeMax Ultra. All Rights Reserved.</p>
         <br>
         <a href="#">Privacy Policy</a>
         <a href="#">Terms of Service</a>
         <a href="#">Contact Us</a>
-        <br><br>
-        <p style="font-size: 12px; opacity: 0.6;">Disclaimer: This tool is for personal use only. Please respect copyright laws.</p>
     </footer>
 
     <script src="https://pl28420404.effectivegatecpm.com/64/a3/87/64a38791122307613782265dbd51725c.js"></script>
 
     <script>
         let mode = 'video';
+        let currentServer = 1;
 
         function setMode(newMode) {
             mode = newMode;
-            // Update Buttons
             document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
             if(mode === 'video') document.querySelectorAll('.tab-btn')[0].classList.add('active');
             if(mode === 'audio') document.querySelectorAll('.tab-btn')[1].classList.add('active');
             if(mode === 'thumb') document.querySelectorAll('.tab-btn')[2].classList.add('active');
-
-            // Hide Results
-            document.getElementById('resultFrame').style.display = 'none';
+            
+            if(mode === 'thumb') document.getElementById('serverContainer').style.display = 'none';
+            else document.getElementById('serverContainer').style.display = 'block';
+            
             document.getElementById('thumbResult').style.display = 'none';
         }
 
-        function startDownload() {
+        function setServer(srv) {
+            currentServer = srv;
+            document.querySelectorAll('.srv-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.srv-btn')[srv-1].classList.add('active');
+        }
+
+        async function startDownload() {
             const url = document.getElementById('urlInput').value;
             if(!url || !url.includes('youtu')) {
                 alert("Please paste a valid YouTube link.");
                 return;
             }
 
-            // Extract ID
+            // Regex for Shorts & Videos
             let videoId = null;
-            const match = url.match(/^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/);
+            const match = url.match(/^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=|shorts\/)([^#\&\?]*).*/);
             if (match && match[2].length == 11) videoId = match[2];
 
-            if(!videoId) return;
+            if(!videoId) {
+                alert("Invalid Link. Could not find Video ID.");
+                return;
+            }
 
-            if(mode === 'thumb') {
-                const imgUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
-                document.getElementById('thumbResult').style.display = 'block';
-                document.getElementById('thumbImg').src = imgUrl;
-                document.getElementById('thumbLink').href = imgUrl;
-            } else {
-                let fmt = (mode === 'audio') ? 'mp3' : '1080';
-                // API Call
-                document.getElementById('resultFrame').style.display = 'block';
-                document.getElementById('resultFrame').style.height = '350px';
-                document.getElementById('resultFrame').src = `https://loader.to/api/button/?url=${url}&f=${fmt}&color=ff0000`;
+            // Standard URL for APIs
+            const standardUrl = `https://www.youtube.com/watch?v=${videoId}`;
+
+            // INFO FETCH
+            const imgUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+            document.getElementById('thumbResult').style.display = 'block';
+            document.getElementById('thumbImg').src = imgUrl;
+            document.getElementById('thumbLink').href = imgUrl;
+
+            document.getElementById('videoTitle').innerText = "Loading details...";
+            document.getElementById('channelName').innerText = "";
+            
+            try {
+                const response = await fetch(`https://noembed.com/embed?url=${standardUrl}`);
+                const data = await response.json();
+                if(data.title) {
+                    document.getElementById('videoTitle').innerText = data.title;
+                    document.getElementById('channelName').innerText = data.author_name;
+                } else {
+                    document.getElementById('videoTitle').innerText = "Video/Short Found";
+                }
+            } catch(e) {
+                console.log("Title fetch failed");
+            }
+
+            // DOWNLOAD LOGIC (SEPARATE SERVERS FOR MUSIC)
+            if(mode !== 'thumb') {
+                setTimeout(() => {
+                    if(mode === 'audio') {
+                        // === MUSIC SERVERS (3 Options) ===
+                        if(currentServer === 1) {
+                            // Default: Tomp3 (Best for MP3)
+                            window.open(`https://tomp3.cc/youtube-to-mp3/${videoId}`, '_blank');
+                        } else if (currentServer === 2) {
+                            // Backup 1: Yout (MP3 Mode)
+                            window.open(`https://yout.com/video/?url=${standardUrl}`, '_blank');
+                        } else {
+                            // Backup 2: Dirpy (MP3 Mode)
+                            window.open(`https://dirpy.com/studio?url=${standardUrl}`, '_blank');
+                        }
+                    } else {
+                        // === VIDEO SERVERS (3 Options) ===
+                        if(currentServer === 1) window.open(`https://dirpy.com/studio?url=${standardUrl}`, '_blank');
+                        else if(currentServer === 2) window.open(`https://yout.com/video/?url=${standardUrl}`, '_blank');
+                        else window.open(`https://cobalt.tools/`, '_blank');
+                    }
+                }, 1000);
             }
         }
     </script>
