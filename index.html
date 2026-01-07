@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>TubeMax Ultra - Best Free YouTube Video & MP3 Downloader</title>
+    <meta name="description" content="Download YouTube videos in 4K, 1080p, and MP3 instantly with TubeMax Ultra. The safest online downloader for mobile and PC. No software needed.">
+    <meta name="keywords" content="YouTube Downloader, YT to MP3, Video Saver, 4K Downloader, YouTube Shorts Download, Free Video Converter, TubeMax">
+    <meta name="robots" content="index, follow">
+
+    <link rel="icon" href="favicon.png" type="image/png">
+
+    <style>
+        /* === CORE DESIGN === */
+        :root {
+            --primary: #ff0000;
+            --dark: #111;
+            --bg: #f8f9fa;
+            --glass: rgba(255, 255, 255, 0.9);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+
+        body { background-color: var(--bg); color: #333; line-height: 1.6; }
+
+        /* === HEADER (Text Only - No Logo Image Here) === */
+        nav {
+            background: white;
+            padding: 15px 5%;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .site-name { font-size: 24px; font-weight: 900; color: var(--dark); text-decoration: none; letter-spacing: -1px; }
+        .site-name span { color: var(--primary); }
+
+        /* === HERO SECTION === */
+        .hero {
+            background: linear-gradient(135deg, #ff4b4b 0%, #cc0000 100%);
+            padding: 50px 20px 100px;
+            text-align: center;
+            color: white;
+            border-bottom-left-radius: 40px;
+            border-bottom-right-radius: 40px;
+        }
+        .hero h1 { font-size: 2.2rem; font-weight: 800; margin-bottom: 10px; }
+        
+        /* === MAIN TOOL (Glass Effect) === */
+        .tool-box {
+            max-width: 800px;
+            margin: -70px auto 40px;
+            background: var(--glass);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.6);
+            position: relative;
+        }
+
+        /* Tabs */
+        .tabs { display: flex; justify-content: center; gap: 10px; margin-bottom: 20px; }
+        .tab-btn {
+            padding: 8px 20px; border: none; background: #eee; border-radius: 20px;
+            cursor: pointer; font-weight: 600; color: #555; transition: 0.3s;
+        }
+        .tab-btn.active { background: var(--primary); color: white; box-shadow: 0 4px 10px rgba(255,0,0,0.3); }
+
+        /* Input */
+        .input-group { display: flex; gap: 10px; flex-wrap: wrap; }
+        input[type="text"] {
+            flex: 1; padding: 15px; border: 2px solid #ddd; border-radius: 10px; font-size: 16px; outline: none;
+        }
+        input[type="text"]:focus { border-color: var(--primary); }
+        
+        .dl-btn {
+            padding: 15px 30px; background: var(--dark); color: white; border: none;
+            border-radius: 10px; font-weight: bold; cursor: pointer; transition: 0.2s;
+        }
+        .dl-btn:hover { background: #000; transform: scale(1.02); }
+
+        /* Result Frames */
+        iframe#resultFrame { width: 100%; min-height: 100px; border: none; margin-top: 20px; display: none; }
+        #thumbResult { display: none; text-align: center; margin-top: 20px; }
+        #thumbResult img { max-width: 100%; border-radius: 10px; margin-bottom: 10px; }
+
+        /* === ADS AREA === */
+        .ad-slot {
+            width: 100%; height: 100px; background: #eaeaea; 
+            display: flex; align-items: center; justify-content: center;
+            margin: 20px 0; border-radius: 8px; color: #888; border: 1px dashed #ccc;
+        }
+
+        /* === SEO ARTICLE (The "Bada Letter") === */
+        .article-container {
+            max-width: 900px;
+            margin: 0 auto 50px;
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+        }
+        
+        .article-content h2 { color: var(--primary); margin-top: 30px; font-size: 1.8rem; }
+        .article-content p { margin-bottom: 15px; text-align: justify; color: #555; font-size: 1.1rem; }
+        .article-content ul { margin: 20px; color: #444; }
+        .article-content li { margin-bottom: 10px; }
+
+        /* === FOOTER === */
+        footer { background: #1a1a1a; color: #aaa; text-align: center; padding: 40px 20px; }
+        footer a { color: #fff; text-decoration: none; margin: 0 10px; }
+
+        /* === DESKTOP VS MOBILE STYLES === */
+        
+        /* Mobile (Default above is mobile first, but let's refine) */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 1.8rem; }
+            .tool-box { margin-top: -50px; padding: 20px; border-radius: 15px; }
+            .input-group { flex-direction: column; }
+            .dl-btn { width: 100%; }
+        }
+
+        /* Desktop (Large Screens) */
+        @media (min-width: 1024px) {
+            .hero { padding: 80px 20px 140px; }
+            .tool-box { padding: 50px; margin-top: -100px; }
+            .input-group { gap: 15px; }
+            
+            /* Desktop par Article thoda wide aur clean dikhega */
+            .article-container { padding: 60px; }
+            .article-content h2 { font-size: 2.2rem; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#" class="site-name">TubeMax <span>Ultra</span></a>
+    </nav>
+
+    <div class="hero">
+        <h1>Download Video & Music Free</h1>
+        <p>Paste Link. Click Download. Enjoy Original Quality.</p>
+    </div>
+
+    <div class="tool-box">
+        
+        <div class="ad-slot">
+            <span>Ad Space (Top Banner)</span>
+        </div>
+
+        <div class="tabs">
+            <button class="tab-btn active" onclick="setMode('video')">Video</button>
+            <button class="tab-btn" onclick="setMode('audio')">Music (MP3)</button>
+            <button class="tab-btn" onclick="setMode('thumb')">Thumbnail</button>
+        </div>
+
+        <div class="input-group">
+            <input type="text" id="urlInput" placeholder="Paste YouTube Link here...">
+            <button class="dl-btn" onclick="startDownload()">Download</button>
+        </div>
+
+        <iframe id="resultFrame" scrolling="no"></iframe>
+        
+        <div id="thumbResult">
+            <img id="thumbImg" src="">
+            <br>
+            <a id="thumbLink" href="#" class="dl-btn" style="text-decoration:none; display:inline-block; margin-top:10px;">Save Image</a>
+        </div>
+
+        <div class="ad-slot">
+            <span>Ad Space (Bottom Banner)</span>
+        </div>
+    </div>
+
+    <div class="article-container">
+        <div class="article-content">
+            <h2>Ultimate YouTube Video Downloader 2026</h2>
+            <p>Welcome to <strong>TubeMax Ultra</strong>, the internet's most reliable and fast tool for downloading content from YouTube. Whether you need to save a video for offline viewing, extract background music as MP3, or grab a high-quality thumbnail, we have you covered. Our service is completely free, secure, and user-friendly.</p>
+
+            <h3>How Does It Work?</h3>
+            <p>Our intelligent system connects directly to high-speed servers to process your request instantly. Unlike other tools that require software installation, TubeMax Ultra works directly in your browser (Chrome, Safari, Firefox) on any device.</p>
+            
+            <ul>
+                <li><strong>Universal Support:</strong> Works on Android, iOS (iPhone), Windows, and Mac.</li>
+                <li><strong>No Limits:</strong> Download as many videos as you want. unlimited and free.</li>
+                <li><strong>Original Quality:</strong> We support 4K, 2K, 1080p Full HD, and standard SD qualities.</li>
+            </ul>
+
+            <h2>YouTube to MP3 Converter</h2>
+            <p>Looking for music? Our "Music Mode" automatically extracts the audio track from the video and converts it into a high-quality MP3 file (320kbps). This is perfect for building your offline music library without needing premium subscriptions.</p>
+
+            <h2>Is it Safe to Use?</h2>
+            <p>Yes, absolutely. TubeMax Ultra does not store any of your personal data or the videos you download. The process is anonymous and secure. We do not require any signup or login, ensuring your privacy is maintained at all times.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 TubeMax Ultra.</p>
+        <br>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Contact Us</a>
+        <br><br>
+        <p style="font-size: 12px; opacity: 0.6;">Disclaimer: This tool is for personal use only. Please respect copyright laws.</p>
+    </footer>
+
+    <script>
+        let mode = 'video';
+
+        function setMode(newMode) {
+            mode = newMode;
+            // Update Buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            if(mode === 'video') document.querySelectorAll('.tab-btn')[0].classList.add('active');
+            if(mode === 'audio') document.querySelectorAll('.tab-btn')[1].classList.add('active');
+            if(mode === 'thumb') document.querySelectorAll('.tab-btn')[2].classList.add('active');
+
+            // Hide Results
+            document.getElementById('resultFrame').style.display = 'none';
+            document.getElementById('thumbResult').style.display = 'none';
+        }
+
+        function startDownload() {
+            const url = document.getElementById('urlInput').value;
+            if(!url || !url.includes('youtu')) {
+                alert("Please paste a valid YouTube link.");
+                return;
+            }
+
+            // Extract ID
+            let videoId = null;
+            const match = url.match(/^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/);
+            if (match && match[2].length == 11) videoId = match[2];
+
+            if(!videoId) return;
+
+            if(mode === 'thumb') {
+                const imgUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+                document.getElementById('thumbResult').style.display = 'block';
+                document.getElementById('thumbImg').src = imgUrl;
+                document.getElementById('thumbLink').href = imgUrl;
+            } else {
+                let fmt = (mode === 'audio') ? 'mp3' : '1080';
+                // API Call
+                document.getElementById('resultFrame').style.display = 'block';
+                document.getElementById('resultFrame').style.height = '350px';
+                document.getElementById('resultFrame').src = `https://loader.to/api/button/?url=${url}&f=${fmt}&color=ff0000`;
+            }
+        }
+    </script>
+</body>
+</html>
