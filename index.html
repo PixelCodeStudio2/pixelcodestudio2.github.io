@@ -24,7 +24,7 @@
 
         body { background-color: var(--bg); color: #333; line-height: 1.6; }
 
-        /* === HEADER (Text Only - No Logo Image Here) === */
+        /* === HEADER === */
         nav {
             background: white;
             padding: 15px 5%;
@@ -84,14 +84,15 @@
         #thumbResult { display: none; text-align: center; margin-top: 20px; }
         #thumbResult img { max-width: 100%; border-radius: 10px; margin-bottom: 10px; }
 
-        /* === ADS AREA === */
+        /* === ADS AREA (Clean) === */
         .ad-slot {
-            width: 100%; height: 100px; background: #eaeaea; 
+            width: 100%; 
             display: flex; align-items: center; justify-content: center;
-            margin: 20px 0; border-radius: 8px; color: #888; border: 1px dashed #ccc;
+            margin: 20px 0;
+            overflow: hidden; /* Bada ad mobile me bahar nahi niklega */
         }
 
-        /* === SEO ARTICLE (The "Bada Letter") === */
+        /* === SEO ARTICLE === */
         .article-container {
             max-width: 900px;
             margin: 0 auto 50px;
@@ -110,25 +111,18 @@
         footer { background: #1a1a1a; color: #aaa; text-align: center; padding: 40px 20px; }
         footer a { color: #fff; text-decoration: none; margin: 0 10px; }
 
-        /* === DESKTOP VS MOBILE STYLES === */
-        
-        /* Mobile (Default above is mobile first, but let's refine) */
+        /* Mobile Adjustments */
         @media (max-width: 768px) {
             .hero h1 { font-size: 1.8rem; }
-            .tool-box { margin-top: -50px; padding: 20px; border-radius: 15px; }
+            .tool-box { margin-top: -50px; padding: 20px; }
             .input-group { flex-direction: column; }
             .dl-btn { width: 100%; }
         }
 
-        /* Desktop (Large Screens) */
         @media (min-width: 1024px) {
             .hero { padding: 80px 20px 140px; }
             .tool-box { padding: 50px; margin-top: -100px; }
-            .input-group { gap: 15px; }
-            
-            /* Desktop par Article thoda wide aur clean dikhega */
             .article-container { padding: 60px; }
-            .article-content h2 { font-size: 2.2rem; border-bottom: 2px solid #eee; padding-bottom: 10px; }
         }
 
     </style>
@@ -147,7 +141,16 @@
     <div class="tool-box">
         
         <div class="ad-slot">
-            <span>Ad Space (Top Banner)</span>
+            <script>
+                atOptions = {
+                    'key' : '69db9fb055bbb18c62e0fa2db41f04c8',
+                    'format' : 'iframe',
+                    'height' : 90,
+                    'width' : 728,
+                    'params' : {}
+                };
+            </script>
+            <script src="https://www.highperformanceformat.com/69db9fb055bbb18c62e0fa2db41f04c8/invoke.js"></script>
         </div>
 
         <div class="tabs">
@@ -170,8 +173,10 @@
         </div>
 
         <div class="ad-slot">
-            <span>Ad Space (Bottom Banner)</span>
+            <script async="async" data-cfasync="false" src="https://pl28420466.effectivegatecpm.com/baf1cc081a550f0175c42c477e83efd1/invoke.js"></script>
+            <div id="container-baf1cc081a550f0175c42c477e83efd1"></div>
         </div>
+
     </div>
 
     <div class="article-container">
@@ -205,6 +210,8 @@
         <br><br>
         <p style="font-size: 12px; opacity: 0.6;">Disclaimer: This tool is for personal use only. Please respect copyright laws.</p>
     </footer>
+
+    <script src="https://pl28420404.effectivegatecpm.com/64/a3/87/64a38791122307613782265dbd51725c.js"></script>
 
     <script>
         let mode = 'video';
